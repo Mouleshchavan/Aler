@@ -1,11 +1,27 @@
 {
-  "name": "final-folder",
-  "version": "1.0.0",
-  "description": "",
+  "name": "create-opsgenie-alert-action",
+  "version": "1.2.2",
   "main": "index.js",
+  "repository": "git@github.com:rockem/create-opsgenie-alert-action.git",
+  "author": "Eli Segal <eli.segal@gmail.com>",
+  "license": "MIT",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "compile": "ncc build index.js --license licenses.txt",
+    "lint": "eslint . --ext .js",
+    "test": "mocha",
+    "preversion": "git pull"
   },
-  "author": "",
-  "license": "ISC"
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "@actions/core": "^1.6.0",
+    "opsgenie-sdk": "^0.5.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.33.3",
+    "chai": "^4.3.6",
+    "eslint": "^8.7.0",
+    "mocha": "^9.2.0"
+  }
 }
